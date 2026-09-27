@@ -155,6 +155,43 @@ The command showed that VLAN 10 was no longer included in the trunk's allowed VL
 
 ## Fault Identification
 
+The troubleshooting process used Cisco IOS verification commands to determine whether the problem was caused by the VLAN configuration or the inter-switch trunk.
+
+Step 1 — Verify VLAN Configuration
+
+The following command was used on both switches:
+
+`show vlan brief`
+
+The output confirmed that:
+
+- VLAN 10 (SALES) was active.
+- VLAN 10 was assigned to FastEthernet0/1.
+- VLAN 20 (IT) and VLAN 30 (MANAGEMENT) were also active and correctly assigned.
+
+This ruled out a missing VLAN or incorrect access-port assignment as the cause of the failure.
+
+Step 2 — Verify the Trunk
+
+The following command was then used:
+
+`show interfaces trunk`
+
+The trunk was operational and using 802.1Q, but the allowed VLAN list showed:
+
+`20,30`
+
+VLAN 10 was missing from the allowed list.
+
+Root Cause
+
+The root cause was a trunk allowed-VLAN misconfiguration. VLAN 10 was active on the switches and correctly assigned to the Sales access ports, but it was not permitted to cross the inter-switch trunk.
+
+Therefore, Sales-PC1 and Sales-PC2 could not communicate even though both devices belonged to VLAN 10.
+
+This demonstrates the importance of verifying both VLAN membership and trunk configuration when troubleshooting VLAN connectivity.
+
+
 ## Remediation
 
 ## Security Validation
