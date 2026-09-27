@@ -331,3 +331,9 @@ This lab reinforced several practical network-security and troubleshooting conce
 - VLAN segmentation alone should not be treated as complete network security isolation; additional controls such as inter-VLAN ACLs, firewall policies, and other security mechanisms may be required in a production environment.
 
 ## Technologies used
+
+- Cisco Packet Tracer — Network simulation and topology design
+- Cisco IOS — Switch configuration and troubleshooting
+- VLANs — Layer 2 network segmentation
+- IEEE 802.1Q — VLAN trunking between switches
+- ICMP/Ping — Connectivity and segmentation testing
