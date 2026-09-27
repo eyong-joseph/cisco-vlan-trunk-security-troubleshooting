@@ -39,7 +39,7 @@ The lab uses two Cisco 2960 switches connected through a GigabitEthernet trunk l
 - GigabitEthernet0/1 on both switches is configured as an IEEE 802.1Q trunk.
 - The trunk carries VLANs 10, 20, and 30 between the switches.
 
-**VLAN Segmentation**
+*VLAN Segmentation*
 
 ```bash
 VLAN| Name| Purpose
@@ -70,7 +70,7 @@ No default gateway is configured because the lab focuses on Layer 2 connectivity
 
 The switches were configured with three VLANs and the appropriate access-port assignments.
 
-**VLAN Configuration**
+*VLAN Configuration*
 
 The following VLANs were created on both switches:
 
@@ -79,7 +79,7 @@ VLAN 10 — SALES
 VLAN 20 — IT
 VLAN 30 — MANAGEMENT
 ```
-**Access Port Configuration**
+*Access Port Configuration*
 
 The end-device ports were assigned to their respective VLANs:
 
@@ -95,7 +95,7 @@ Fa0/2 → VLAN 20
 Fa0/3 → VLAN 30
 ```
 
-**Trunk Configuration**
+*Trunk Configuration*
 
 The GigabitEthernet0/1 interface on both switches was configured as an IEEE 802.1Q trunk:
 
@@ -183,7 +183,7 @@ The trunk was operational and using 802.1Q, but the allowed VLAN list showed:
 
 VLAN 10 was missing from the allowed list.
 
-**Root Cause**
+*Root Cause*
 
 The root cause was a trunk allowed-VLAN misconfiguration. VLAN 10 was active on the switches and correctly assigned to the Sales access ports, but it was not permitted to cross the inter-switch trunk.
 
@@ -209,11 +209,11 @@ The trunk was then verified using:
 
 The verification confirmed that VLANs 10, 20, and 30 were allowed, active, and forwarding across the trunk.
 
-**Connectivity Verification**
+*Connectivity Verification*
 
 After the configuration was corrected, the Sales devices were tested again.
 
-**Sales-PC1 → Sales-PC2**
+*Sales-PC1 → Sales-PC2*
 
 `ping 192.168.10.12`
 
@@ -225,7 +225,7 @@ The IT and Management same-VLAN connectivity tests were also successful.
 
 The final configuration was tested to confirm that the VLAN segmentation was functioning as intended in this Layer 2-only topology.
 
-Same-VLAN Connectivity
+*Same-VLAN Connectivity*
 
 Devices within the same VLAN successfully communicated across the inter-switch trunk:
 
@@ -233,7 +233,7 @@ Devices within the same VLAN successfully communicated across the inter-switch t
 - IT-PC1 → IT-PC2 — Successful
 - Management-PC1 → Management-PC2 — Successful
 
-Cross-VLAN Connectivity
+*Cross-VLAN Connectivity*
 
 Sales-PC1 was then tested against devices in the IT and Management VLANs:
 
@@ -248,8 +248,23 @@ This behavior is expected because the lab does not include a router or Layer 3 s
 
 The results demonstrate that the configured VLANs provide Layer 2 separation in this topology. They should not be interpreted as proof of complete network security isolation, since a routed environment could permit controlled communication between VLANs.
 
-
 ## Evidence
+
+The following screenshots document the key stages of the lab:
+
+Evidence| Description
+"01-vlan-configuration.png"| VLAN creation and access-port assignments
+"02-baseline-connectivity.png"| Successful same-VLAN connectivity before the fault
+"03-trunk-vlan10-misconfiguration.png"| VLAN 10 removed from the trunk allowed list
+"04-failed-vlan10-ping.png"| Failed Sales-PC1 to Sales-PC2 connectivity after the fault
+"05-vlan10-connectivity-restored.png"| Successful VLAN 10 connectivity after remediation
+"06-security-validation.png"| Cross-VLAN connectivity tests demonstrating Layer 2 separation
+"07-final-trunk-verification.png"| Final verification of the corrected trunk configuration
+
+The original Cisco Packet Tracer project file is also included:
+
+"cisco-vlan-trunk-security-troubleshooting.pkt”
+
 
 ## Key Commands
 
