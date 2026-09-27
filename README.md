@@ -265,6 +265,8 @@ The original Cisco Packet Tracer project file is also included:
 
 [cisco-vlan-trunk-security-troubleshooting.pkt](cisco-vlan-trunk-security-troubleshooting.pkt)
 
+> Requires Cisco Packet Tracer to open and interact with the project file
+
 ## Key Commands
 
 The following Cisco IOS commands were used to configure, verify, and troubleshoot the network.
