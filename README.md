@@ -194,6 +194,33 @@ This demonstrates the importance of verifying both VLAN membership and trunk con
 
 ## Remediation
 
+The trunk configuration was corrected on both SW1 and SW2 by restoring VLAN 10 to the allowed VLAN list.
+
+The following configuration was applied to GigabitEthernet0/1:
+
+```text
+interface gigabitEthernet 0/1
+ switchport trunk allowed vlan 10,20,30
+```
+
+The trunk was then verified using:
+
+`show interfaces trunk`
+
+The verification confirmed that VLANs 10, 20, and 30 were allowed, active, and forwarding across the trunk.
+
+**Connectivity Verification**
+
+After the configuration was corrected, the Sales devices were tested again.
+
+**Sales-PC1 → Sales-PC2**
+
+`ping 192.168.10.12`
+
+The ping was successful, confirming that VLAN 10 connectivity had been restored.
+
+The IT and Management same-VLAN connectivity tests were also successful.
+
 ## Security Validation
 
 ## Evidence
