@@ -39,7 +39,7 @@ The lab uses two Cisco 2960 switches connected through a GigabitEthernet trunk l
 - GigabitEthernet0/1 on both switches is configured as an IEEE 802.1Q trunk.
 - The trunk carries VLANs 10, 20, and 30 between the switches.
 
-VLAN Segmentation
+**VLAN Segmentation**
 
 ```bash
 VLAN| Name| Purpose
@@ -70,7 +70,7 @@ No default gateway is configured because the lab focuses on Layer 2 connectivity
 
 The switches were configured with three VLANs and the appropriate access-port assignments.
 
-VLAN Configuration
+**VLAN Configuration**
 
 The following VLANs were created on both switches:
 
@@ -79,7 +79,7 @@ VLAN 10 — SALES
 VLAN 20 — IT
 VLAN 30 — MANAGEMENT
 ```
-Access Port Configuration
+**Access Port Configuration**
 
 The end-device ports were assigned to their respective VLANs:
 
@@ -95,7 +95,7 @@ Fa0/2 → VLAN 20
 Fa0/3 → VLAN 30
 ```
 
-Trunk Configuration
+**Trunk Configuration**
 
 The GigabitEthernet0/1 interface on both switches was configured as an IEEE 802.1Q trunk:
 
@@ -183,7 +183,7 @@ The trunk was operational and using 802.1Q, but the allowed VLAN list showed:
 
 VLAN 10 was missing from the allowed list.
 
-Root Cause
+**Root Cause**
 
 The root cause was a trunk allowed-VLAN misconfiguration. VLAN 10 was active on the switches and correctly assigned to the Sales access ports, but it was not permitted to cross the inter-switch trunk.
 
