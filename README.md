@@ -156,7 +156,7 @@ The command showed that VLAN 10 was no longer included in the trunk's allowed VL
 
 The troubleshooting process used Cisco IOS verification commands to determine whether the problem was caused by the VLAN configuration or the inter-switch trunk.
 
-Step 1 — Verify VLAN Configuration
+### Step 1 — Verify VLAN Configuration
 
 The following command was used on both switches:
 
@@ -170,7 +170,7 @@ The output confirmed that:
 
 This ruled out a missing VLAN or incorrect access-port assignment as the cause of the failure.
 
-Step 2 — Verify the Trunk
+### Step 2 — Verify the Trunk
 
 The following command was then used:
 
@@ -198,7 +198,7 @@ The following configuration was applied to GigabitEthernet0/1:
 
 ```text
 interface gigabitEthernet 0/1
- switchport trunk allowed vlan 10,20,30
+switchport trunk allowed vlan 10,20,30
 ```
 
 The trunk was then verified using:
