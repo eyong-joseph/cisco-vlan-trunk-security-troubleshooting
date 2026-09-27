@@ -131,6 +131,28 @@ These successful tests confirmed that the VLAN assignments and inter-switch trun
 
 ## Troubleshooting Scenario
 
+A controlled trunk misconfiguration was introduced to simulate a real-world network connectivity issue.
+
+VLAN 10 was deliberately removed from the allowed VLAN list on the inter-switch trunk of both SW1 and SW2.
+
+The trunk configuration was changed from:
+
+`switchport trunk allowed vlan 10,20,30`
+
+to:
+
+`switchport trunk allowed vlan 20,30`
+
+This prevented VLAN 10 traffic from crossing the trunk between SW1 and SW2.
+
+As a result, Sales-PC1 could no longer communicate with Sales-PC2, while the VLAN 10 access-port assignments on the switches remained unchanged.
+
+The fault was verified using:
+
+`show interfaces trunk`
+
+The command showed that VLAN 10 was no longer included in the trunk's allowed VLAN list.
+
 ## Fault Identification
 
 ## Remediation
