@@ -173,7 +173,7 @@ The following command was then used:
 
 `show interfaces trunk`
 
-The trunk was operational and using 802.1Q, but the allowed VLAN list showed:
+The trunk was operational and configured as an IEEE 802.1Q, but the allowed VLAN list showed:
 
 `20,30`
 
@@ -319,7 +319,7 @@ This lab reinforced several practical network-security and troubleshooting conce
 - VLANs provide logical Layer 2 segmentation between groups of devices.
 - An 802.1Q trunk must permit the VLANs that need to traverse the inter-switch link.
 - A VLAN can be correctly configured and assigned to an access port while still experiencing connectivity problems if the trunk does not allow that VLAN.
-- "show vlan brief" and "show interfaces trunk" are useful Cisco IOS commands for isolating VLAN and trunk-related connectivity problems.
+- show vlan brief and show interfaces trunk are useful Cisco IOS commands for isolating VLAN and trunk-related connectivity problems.
 - Controlled configuration changes are useful for understanding how network faults affect connectivity.
 - Same-VLAN connectivity and cross-VLAN testing can help distinguish Layer 2 problems from Layer 3 routing behavior.
 - VLAN segmentation alone should not be treated as complete network security isolation; additional controls such as inter-VLAN ACLs, firewall policies, and other security mechanisms may be required in a production environment.
