@@ -29,7 +29,7 @@ The objectives of this lab were to:
 5. Use Cisco IOS troubleshooting commands to identify the cause of the connectivity failure.
 6. Restore the correct trunk configuration and verify connectivity.
 7. Validate Layer 2 separation between the configured VLANs.
-8. Document the troubleshooting process and security implications as a practical network-security portfolio project.
+   
 
 ## Network Architecture
 
