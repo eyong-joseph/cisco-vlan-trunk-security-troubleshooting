@@ -53,6 +53,7 @@ The topology is intentionally Layer 2 only. No router or Layer 3 switch is used,
 
 The network uses three VLANs to separate Sales, IT, and Management devices. Each VLAN uses its own /24 IP subnet.
 
+```bash
 Device| Switch| Port| VLAN| IP Address
 Sales-PC1| SW1| Fa0/1| 10| 192.168.10.11/24
 IT-PC1| SW1| Fa0/2| 20| 192.168.20.11/24
@@ -60,7 +61,7 @@ Management-PC1| SW1| Fa0/3| 30| 192.168.30.11/24
 Sales-PC2| SW2| Fa0/1| 10| 192.168.10.12/24
 IT-PC2| SW2| Fa0/2| 20| 192.168.20.12/24
 Management-PC2| SW2| Fa0/3| 30| 192.168.30.12/24
-
+```
 The inter-switch connection uses GigabitEthernet0/1 on both switches as an 802.1Q trunk. The trunk is configured to carry VLANs 10, 20, and 30.
 
 No default gateway is configured because the lab focuses on Layer 2 connectivity and VLAN segmentation rather than inter-VLAN routing.
