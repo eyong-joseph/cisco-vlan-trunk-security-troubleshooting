@@ -263,7 +263,7 @@ The following screenshots document the key stages of the lab:
 
 The original Cisco Packet Tracer project file is also included:
 
-`cisco-vlan-trunk-security-troubleshooting.pkt`
+[cisco-vlan-trunk-security-troubleshooting.pkt](cisco-vlan-trunk-security-troubleshooting.pkt)
 
 ## Key Commands
 
