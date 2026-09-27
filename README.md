@@ -68,6 +68,52 @@ No default gateway is configured because the lab focuses on Layer 2 connectivity
 
 ## Initial Configuration
 
+The switches were configured with three VLANs and the appropriate access-port assignments.
+
+VLAN Configuration
+
+The following VLANs were created on both switches:
+
+```text
+VLAN 10 — SALES
+VLAN 20 — IT
+VLAN 30 — MANAGEMENT
+```
+Access Port Configuration
+
+The end-device ports were assigned to their respective VLANs:
+
+```text
+SW1:
+Fa0/1 → VLAN 10
+Fa0/2 → VLAN 20
+Fa0/3 → VLAN 30
+
+SW2:
+Fa0/1 → VLAN 10
+Fa0/2 → VLAN 20
+Fa0/3 → VLAN 30
+```
+
+Trunk Configuration
+
+The GigabitEthernet0/1 interface on both switches was configured as an IEEE 802.1Q trunk:
+
+```text
+interface gigabitEthernet 0/1
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20,30
+ no shutdown
+```
+
+The initial configuration was verified using:
+
+```text
+show vlan brief
+show interfaces trunk
+```
+These commands confirmed that the VLANs were active, the access ports were correctly assigned, and the inter-switch trunk was carrying VLANs 10, 20, and 30.
+
 ## Troubleshooting Scenario
 
 Fault Identification
