@@ -114,9 +114,24 @@ show interfaces trunk
 ```
 These commands confirmed that the VLANs were active, the access ports were correctly assigned, and the inter-switch trunk was carrying VLANs 10, 20, and 30.
 
+## Baseline Connectivity
+
+Before introducing the troubleshooting scenario, same-VLAN connectivity was tested between devices connected to different switches.
+
+The following tests were successful:
+
+```bash
+Source| Destination| VLAN| Result
+Sales-PC1| Sales-PC2| 10| Successful
+IT-PC1| IT-PC2| 20| Successful
+Management-PC1| Management-PC2| 30| Successful
+```
+
+These successful tests confirmed that the VLAN assignments and inter-switch trunk were functioning correctly before the fault was introduced.
+
 ## Troubleshooting Scenario
 
-Fault Identification
+## Fault Identification
 
 ## Remediation
 
