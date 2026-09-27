@@ -20,7 +20,16 @@ The project also validates Layer 2 segmentation by demonstrating that Sales devi
 
 ## Objectives
 
+The objectives of this lab were to:
 
+1. Configure VLAN-based network segmentation for Sales, IT, and Management.
+2. Configure an IEEE 802.1Q trunk between two Cisco switches.
+3. Verify same-VLAN communication across the inter-switch trunk.
+4. Introduce a controlled trunk configuration fault affecting VLAN 10.
+5. Use Cisco IOS troubleshooting commands to identify the cause of the connectivity failure.
+6. Restore the correct trunk configuration and verify connectivity.
+7. Validate Layer 2 separation between the configured VLANs.
+8. Document the troubleshooting process and security implications as a practical network-security portfolio project.
 
 ## Network Architecture
 
