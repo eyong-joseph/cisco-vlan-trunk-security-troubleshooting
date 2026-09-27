@@ -41,10 +41,11 @@ The lab uses two Cisco 2960 switches connected through a GigabitEthernet trunk l
 
 ### VLAN Segmentation
 
-VLAN| Name| Purpose
-10| SALES| Sales devices
-20| IT| IT devices
-30| MANAGEMENT| Management devices
+| VLAN | Name | Purpose |
+|---|---|---|
+| 10 | SALES | Sales devices |
+| 20 | IT | IT devices |
+| 30 | MANAGEMENT | Management devices |
 
 The topology is intentionally Layer 2 only. No router or Layer 3 switch is used, allowing the lab to demonstrate same-VLAN connectivity and Layer 2 separation without inter-VLAN routing.
 
@@ -52,13 +53,14 @@ The topology is intentionally Layer 2 only. No router or Layer 3 switch is used,
 
 The network uses three VLANs to separate Sales, IT, and Management devices. Each VLAN uses its own /24 IP subnet.
 
-Device| Switch| Port| VLAN| IP Address
-Sales-PC1| SW1| Fa0/1| 10| 192.168.10.11/24
-IT-PC1| SW1| Fa0/2| 20| 192.168.20.11/24
-Management-PC1| SW1| Fa0/3| 30| 192.168.30.11/24
-Sales-PC2| SW2| Fa0/1| 10| 192.168.10.12/24
-IT-PC2| SW2| Fa0/2| 20| 192.168.20.12/24
-Management-PC2| SW2| Fa0/3| 30| 192.168.30.12/24
+| Device | Switch | Port | VLAN | IP Address |
+|---|---|---|---:|---|
+| Sales-PC1 | SW1 | Fa0/1 | 10 | 192.168.10.11/24 |
+| IT-PC1 | SW1 | Fa0/2 | 20 | 192.168.20.11/24 |
+| Management-PC1 | SW1 | Fa0/3 | 30 | 192.168.30.11/24 |
+| Sales-PC2 | SW2 | Fa0/1 | 10 | 192.168.10.12/24 |
+| IT-PC2 | SW2 | Fa0/2 | 20 | 192.168.20.12/24 |
+| Management-PC2 | SW2 | Fa0/3 | 30 | 192.168.30.12/24 |
 
 The inter-switch connection uses GigabitEthernet0/1 on both switches as an 802.1Q trunk. The trunk is configured to carry VLANs 10, 20, and 30.
 
@@ -118,10 +120,11 @@ Before introducing the troubleshooting scenario, same-VLAN connectivity was test
 
 The following tests were successful:
 
-Source| Destination| VLAN| Result
-Sales-PC1| Sales-PC2| 10| Successful
-IT-PC1| IT-PC2| 20| Successful
-Management-PC1| Management-PC2| 30| Successful
+| Source | Destination | VLAN | Result |
+|---|---|---:|---|
+| Sales-PC1 | Sales-PC2 | 10 | Successful |
+| IT-PC1 | IT-PC2 | 20 | Successful |
+| Management-PC1 | Management-PC2 | 30 | Successful |
 
 These successful tests confirmed that the VLAN assignments and inter-switch trunk were functioning correctly before the fault was introduced.
 
@@ -173,7 +176,7 @@ The following command was then used:
 
 `show interfaces trunk`
 
-The trunk was operational and configured as an IEEE 802.1Q, but the allowed VLAN list showed:
+The trunk was operational and configured as an IEEE 802.1Q trunk, but the allowed VLAN list showed:
 
 `20,30`
 
@@ -247,27 +250,19 @@ The results demonstrate that the configured VLANs provide Layer 2 separation in 
 
 The following screenshots document the key stages of the lab:
 
-Evidence| Description
-
-"01-vlan-configuration.png"| VLAN creation and access-port assignments
-
-"02-baseline-connectivity.png"| Successful same-VLAN connectivity before the fault
-
-"03-trunk-vlan10-misconfiguration.png"| VLAN 10 removed from the trunk allowed list
-
-"04-failed-vlan10-ping.png"| Failed Sales-PC1 to Sales-PC2 connectivity after the fault
-
-"05-vlan10-connectivity-restored.png"| Successful VLAN 10 connectivity after remediation
-
-"06-security-validation.png"| Cross-VLAN connectivity tests demonstrating Layer 2 separation
-
-"07-final-trunk-verification.png"| Final verification of the corrected trunk configuration
-
+| Evidence | Description |
+|---|---|
+| `01-vlan-configuration.png` | VLAN creation and access-port assignments |
+| `02-baseline-connectivity.png` | Successful same-VLAN connectivity before the fault |
+| `03-trunk-vlan10-misconfiguration.png` | VLAN 10 removed from the trunk allowed list |
+| `04-failed-vlan10-ping.png` | Failed Sales-PC1 to Sales-PC2 connectivity after the fault |
+| `05-vlan10-connectivity-restored.png` | Successful VLAN 10 connectivity after remediation |
+| `06-security-validation.png` | Cross-VLAN connectivity tests demonstrating Layer 2 separation |
+| `07-final-trunk-verification.png` | Final verification of the corrected trunk configuration |
 
 The original Cisco Packet Tracer project file is also included:
 
 `cisco-vlan-trunk-security-troubleshooting.pkt`
-
 
 ## Key Commands
 
@@ -319,7 +314,7 @@ This lab reinforced several practical network-security and troubleshooting conce
 - VLANs provide logical Layer 2 segmentation between groups of devices.
 - An 802.1Q trunk must permit the VLANs that need to traverse the inter-switch link.
 - A VLAN can be correctly configured and assigned to an access port while still experiencing connectivity problems if the trunk does not allow that VLAN.
-- show vlan brief and show interfaces trunk are useful Cisco IOS commands for isolating VLAN and trunk-related connectivity problems.
+- `show vlan brief` and `show interfaces trunk` are useful Cisco IOS commands for isolating VLAN and trunk-related connectivity problems.
 - Controlled configuration changes are useful for understanding how network faults affect connectivity.
 - Same-VLAN connectivity and cross-VLAN testing can help distinguish Layer 2 problems from Layer 3 routing behavior.
 - VLAN segmentation alone should not be treated as complete network security isolation; additional controls such as inter-VLAN ACLs, firewall policies, and other security mechanisms may be required in a production environment.
