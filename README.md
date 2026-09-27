@@ -223,6 +223,32 @@ The IT and Management same-VLAN connectivity tests were also successful.
 
 ## Security Validation
 
+The final configuration was tested to confirm that the VLAN segmentation was functioning as intended in this Layer 2-only topology.
+
+Same-VLAN Connectivity
+
+Devices within the same VLAN successfully communicated across the inter-switch trunk:
+
+- Sales-PC1 → Sales-PC2 — Successful
+- IT-PC1 → IT-PC2 — Successful
+- Management-PC1 → Management-PC2 — Successful
+
+Cross-VLAN Connectivity
+
+Sales-PC1 was then tested against devices in the IT and Management VLANs:
+
+```text
+ping 192.168.20.11
+ping 192.168.30.11
+```
+
+Both tests failed.
+
+This behavior is expected because the lab does not include a router or Layer 3 switch to perform inter-VLAN routing.
+
+The results demonstrate that the configured VLANs provide Layer 2 separation in this topology. They should not be interpreted as proof of complete network security isolation, since a routed environment could permit controlled communication between VLANs.
+
+
 ## Evidence
 
 ## Key Commands
