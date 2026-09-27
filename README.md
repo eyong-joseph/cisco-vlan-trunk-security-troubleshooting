@@ -41,7 +41,7 @@ The lab uses two Cisco 2960 switches connected through a GigabitEthernet trunk l
 
 VLAN Segmentation
 
-```bash
+```test
 VLAN| Name| Purpose
 10| SALES| Sales devices
 20| IT| IT devices
