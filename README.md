@@ -41,12 +41,11 @@ The lab uses two Cisco 2960 switches connected through a GigabitEthernet trunk l
 
 VLAN Segmentation
 
-```test
 VLAN| Name| Purpose
 10| SALES| Sales devices
 20| IT| IT devices
 30| MANAGEMENT| Management devices
-```
+
 The topology is intentionally Layer 2 only. No router or Layer 3 switch is used, allowing the lab to demonstrate same-VLAN connectivity and Layer 2 separation without inter-VLAN routing.
 
 ## VLAN & IP Addressing
