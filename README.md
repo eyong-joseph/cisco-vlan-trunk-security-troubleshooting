@@ -30,8 +30,23 @@ The objectives of this lab were to:
 6. Restore the correct trunk configuration and verify connectivity.
 7. Validate Layer 2 separation between the configured VLANs.
    
-
 ## Network Architecture
+
+The lab uses two Cisco 2960 switches connected through a GigabitEthernet trunk link.
+
+- SW1 connects the first Sales, IT, and Management PCs.
+- SW2 connects the second Sales, IT, and Management PCs.
+- GigabitEthernet0/1 on both switches is configured as an IEEE 802.1Q trunk.
+- The trunk carries VLANs 10, 20, and 30 between the switches.
+
+VLAN Segmentation
+
+VLAN| Name| Purpose
+10| SALES| Sales devices
+20| IT| IT devices
+30| MANAGEMENT| Management devices
+
+The topology is intentionally Layer 2 only. No router or Layer 3 switch is used, allowing the lab to demonstrate same-VLAN connectivity and Layer 2 separation without inter-VLAN routing.
 
 ## VLAN & IP Addressing
 
