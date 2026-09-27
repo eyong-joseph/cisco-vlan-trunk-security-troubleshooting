@@ -277,6 +277,47 @@ The original Cisco Packet Tracer project file is also included:
 
 ## Key Commands
 
+The following Cisco IOS commands were used to configure, verify, and troubleshoot the network.
+
+*VLAN Verification*
+
+`show vlan brief`
+
+Displays the configured VLANs and their assigned access ports.
+
+*Trunk Verification*
+
+`show interfaces trunk`
+
+Displays trunk status, encapsulation, allowed VLANs, active VLANs, and forwarding status.
+
+*Trunk Configuration*
+
+```text
+interface gigabitEthernet 0/1
+switchport mode trunk
+switchport trunk allowed vlan 10,20,30
+no shutdown
+```
+Configures the inter-switch link as a trunk and permits VLANs 10, 20, and 30.
+
+*Connectivity Testing*
+
+```text
+ping 192.168.10.12
+ping 192.168.20.12
+ping 192.168.30.12
+```
+Tests same-VLAN connectivity between devices connected to different switches.
+
+Cross-VLAN testing was also performed to validate Layer 2 separation:
+
+```text
+ping 192.168.20.11
+ping 192.168.30.11
+```
+These tests failed as expected because the topology does not provide inter-VLAN routing.
+
 ## Lessons Learned
 
 ## Technologies used
