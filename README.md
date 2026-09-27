@@ -259,7 +259,7 @@ The following screenshots document the key stages of the lab:
 | [05-vlan10-connectivity-restored.png](evidence/05-vlan10-connectivity-restored.png) | Successful VLAN 10 connectivity after remediation |
 | [06-security-validation.png](evidence/06-security-validation.png) | Cross-VLAN connectivity tests demonstrating Layer 2 separation |
 | [07-final-trunk-verification.png](evidence/07-final-trunk-verification.png) | Final verification of the corrected trunk configuration |
-| [08-network-topology.png](evidence/08-network-topology.png)
+| [08-network-topology.png](evidence/08-network-topology.png) | Full Packet Tracer network topology |
 
 The original Cisco Packet Tracer project file is also included:
 
