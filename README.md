@@ -252,6 +252,7 @@ The results demonstrate that the configured VLANs provide Layer 2 separation in 
 
 The following screenshots document the key stages of the lab:
 
+```bash
 Evidence| Description
 
 "01-vlan-configuration.png"| VLAN creation and access-port assignments
@@ -267,10 +268,11 @@ Evidence| Description
 "06-security-validation.png"| Cross-VLAN connectivity tests demonstrating Layer 2 separation
 
 "07-final-trunk-verification.png"| Final verification of the corrected trunk configuration
+```
 
 The original Cisco Packet Tracer project file is also included:
 
-"cisco-vlan-trunk-security-troubleshooting.pkt”
+`"cisco-vlan-trunk-security-troubleshooting.pkt”`
 
 
 ## Key Commands
