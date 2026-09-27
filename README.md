@@ -253,12 +253,19 @@ The results demonstrate that the configured VLANs provide Layer 2 separation in 
 The following screenshots document the key stages of the lab:
 
 Evidence| Description
+
 "01-vlan-configuration.png"| VLAN creation and access-port assignments
+
 "02-baseline-connectivity.png"| Successful same-VLAN connectivity before the fault
+
 "03-trunk-vlan10-misconfiguration.png"| VLAN 10 removed from the trunk allowed list
+
 "04-failed-vlan10-ping.png"| Failed Sales-PC1 to Sales-PC2 connectivity after the fault
+
 "05-vlan10-connectivity-restored.png"| Successful VLAN 10 connectivity after remediation
+
 "06-security-validation.png"| Cross-VLAN connectivity tests demonstrating Layer 2 separation
+
 "07-final-trunk-verification.png"| Final verification of the corrected trunk configuration
 
 The original Cisco Packet Tracer project file is also included:
