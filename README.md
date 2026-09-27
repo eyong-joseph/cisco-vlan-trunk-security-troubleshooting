@@ -2,8 +2,6 @@
 
 ## Project Overview
 
-## Objectives
-
 This project demonstrates the design, troubleshooting, and security validation of a small-office switched network using Cisco Packet Tracer.
 
 The network uses three VLANs to logically segment Sales, IT, and Management devices:
@@ -19,6 +17,10 @@ A controlled trunk misconfiguration was introduced by removing VLAN 10 from the 
 Cisco IOS verification commands were then used to identify the fault, restore VLAN 10 to the trunk, and verify that connectivity was successfully restored.
 
 The project also validates Layer 2 segmentation by demonstrating that Sales devices cannot directly communicate with IT or Management devices in the absence of Layer 3 routing.
+
+## Objectives
+
+
 
 ## Network Architecture
 
